@@ -21,3 +21,21 @@ print(type(x_train), type(x_train_tensor), x_train_tensor.type())
 a = torch.randn(1, requires_grad = True, dtype = torch.float)
 b = torch.randn(1, requires_grad = True, dtype = torch.float)
 print(a, b)
+
+lr = 1e-1
+n_epochs = 1000
+
+torch.manual_seed(42)
+a = torch.randn(1, requires_grad = True, dtype = torch.float, device=device)
+b = torch.randn(1, requires_grad = True, dtype = torch.float, device=device)
+
+# y would be the target values
+# the model is made to make a regression line that best fits the model
+# x values and corresponding y values are used for training
+# the difference across the list of training values gives a loss value (MSE)
+# a and b are continually updated to minimize this loss value, giving a complete final regression line that is best fit
+
+for epoch in range(n_epochs):
+    yhat = a + b * x_train_tensor #use train to put x values into function for yhat
+    error = y_train_tensor - yhat # y - yhat for the difference between training and actual (try to understand what is happening here)
+    loss = (error ** 2).mean() #MSE value
