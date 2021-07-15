@@ -1,4 +1,7 @@
 # GitTesting
-Testing DL and git
 
-Dump for testing operations in git and Learning practice
+Dump for testing operations in git and practice
+
+Code copied from :
+
+https://towardsdatascience.com/understanding-pytorch-with-an-example-a-step-by-step-tutorial-81fc5f8c4e8e

@@ -4,7 +4,7 @@ np.random.seed(42)
 
 #making random data set for a = 1 and b = 2
 x = np.random.rand(100,1)
-y = 1 + 2*x + .1 +np.random.randn(100,1)
+y = 1 + 2*x + .1 *np.random.randn(100,1)
 
 # randomly shuffled list of numbers 1 to 100
 idx = np.arange(100)
@@ -24,7 +24,6 @@ x_val = x[val_idx]
 y_val = y[val_idx]
 
 # Initialize parameters "a" and "b" randomly
-
 np.random.seed(42)
 a = np.random.randn(1)
 b = np.random.randn(1)
@@ -58,3 +57,7 @@ for epoch in range(n_epochs):
 print(a,b)
 
 from sklearn.linear_model import LinearRegression
+linr = LinearRegression()
+linr.fit(x_train, y_train)
+print(linr.intercept_, linr.coef_[0])
+
