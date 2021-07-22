@@ -63,3 +63,16 @@ error = y_train_tensor -yhat
 loss = (error ** 2).mean()
 
 make_dot(yhat)
+
+# optimizer
+
+torch.manual_seed(42)
+a = torch.randn(1, requires_grad=True, dtype = torch.float, device=device)
+b = torch.randn(1, requires_grad=True, dtype = torch.float, device=device)
+
+optimizer = optim.SGD([a, b], lr=lr)
+
+for epoch in range(n_epochs):
+    yhat = a + b * x_train_tensor
+    error = y_train_tensor - yhat
+    loss = (error **2).mean()
