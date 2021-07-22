@@ -39,3 +39,27 @@ for epoch in range(n_epochs):
     yhat = a + b * x_train_tensor #use train to put x values into function for yhat
     error = y_train_tensor - yhat # y - yhat for the difference between training and actual (try to understand what is happening here)
     loss = (error ** 2).mean() #MSE value
+
+    loss.backward()
+
+    print(a.grad)
+    print(b.grad)
+
+    with torch.no_grad():
+        a -= lr * a.grad
+        b -= lr * b.grad
+
+    a.grad.zero_()
+    b.grad.zero_()
+
+print(a,b)
+
+torch.manual_seed(42)
+a = torch.randn(1, requires_grad = True, dtype = torch.float, device = device)
+b = torch.randn(1, requires_grad = True, dtype = torch.float, device = device)
+
+yhat = a + b * x_train_tensor
+error = y_train_tensor -yhat
+loss = (error ** 2).mean()
+
+make_dot(yhat)
