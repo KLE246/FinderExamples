@@ -1,4 +1,3 @@
-import matplotlib as matplotlib
 import pandas as pd
 from pandas_ds import *
 
