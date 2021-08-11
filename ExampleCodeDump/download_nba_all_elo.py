@@ -9,8 +9,9 @@ with open(target_csv_path, "wb") as f:
     f.write(response.content)
 print("Download ready.")
 
-# from import_tests import sampleFunc
-# sampleFunc()
+# runs everything in import_tests but only sampleFunc kept as function object for use in this module
+#from import_tests import sampleFunc
+#sampleFunc()
 #
 # import import_tests
 # import_tests.sampleFunc()
