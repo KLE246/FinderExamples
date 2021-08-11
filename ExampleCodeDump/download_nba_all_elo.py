@@ -8,3 +8,14 @@ response.raise_for_status()
 with open(target_csv_path, "wb") as f:
     f.write(response.content)
 print("Download ready.")
+
+# from import_tests import sampleFunc
+# sampleFunc()
+#
+# import import_tests
+# import_tests.sampleFunc()
+#
+# import import_tests as imtest
+# imtest.sampleFunc()
+
+

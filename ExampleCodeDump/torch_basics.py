@@ -1,6 +1,3 @@
-if __name__ == '__main__':
-    print("main")
-
 import torch
 x = torch.arange(12)
 x.shape
